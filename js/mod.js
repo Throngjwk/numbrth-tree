@@ -1,26 +1,33 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
+	name: "Jeehan's Tree",
+	id: "JHJHT",
+	author: "Jeehan2561",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
 	discordLink: "",
-	initialStartPoints: new Decimal (10), // Used for hard resets and new players
+	initialStartPoints: new Decimal (0), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.0",
-	name: "Literally nothing",
+	num: "0",
+	name: "Numbruh Tree?",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
-	<h3>v0.0</h3><br>
-		- Added things.<br>
-		- Added stuff.`
+    <h2>Warning: This mod may be unbalanced</h2><br>
+	<h3>v0</h3><br>
+	    - Added The Numbruh Tree<br>
+		- Added 3 Layers.<br>
+		- Added 12 Achievements.<br>
+		- Added 1 Buyable.<br>
+		- Added 17 Upgrades.<br>
+		Endgame: 3 total ones<br>
+		<h5>The Numbruh Tree Inspired by pg132's Prestige Chain</h5><br>`
+	
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
 
@@ -43,6 +50,15 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if(hasUpgrade('zero', 24)) gain = gain.add(upgradeEffect('zero', 24))
+	if(hasUpgrade('zero', 11)) gain = gain.times(upgradeEffect('zero', 11))
+	if(hasUpgrade('zero', 12)) gain = gain.times(upgradeEffect('zero', 12))
+	if(hasUpgrade('zero', 13)) gain = gain.times(upgradeEffect('zero', 13))
+	if(hasUpgrade('zero', 15)) gain = gain.times(upgradeEffect('zero', 15))
+	if(hasUpgrade('zero', 22)) gain = gain.times(upgradeEffect('zero', 22))
+	gain = gain.times(buyableEffect('zero', 11))
+	if(hasUpgrade('one', 11)) gain = gain.times(upgradeEffect('one', 11))
+	if(hasUpgrade('one', 12)) gain = gain.times(upgradeEffect('one', 12))
 	return gain
 }
 
@@ -52,11 +68,14 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
+	function(){
+		return "You are in The Numbruh Tree"
+	}
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.points.gte(new Decimal("e280000000"))
+	return player.one.total.gte(new Decimal("3"))
 }
 
 
