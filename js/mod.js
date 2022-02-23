@@ -25,8 +25,7 @@ let changelog = `<h1>Changelog:</h1><br>
 		- Added 12 Achievements.<br>
 		- Added 1 Buyable.<br>
 		- Added 17 Upgrades.<br>
-		Endgame: 3 total ones<br>
-		<h5>The Numbruh Tree Inspired by pg132's Prestige Chain</h5><br>`
+		Endgame: 3 total ones`
 	
 
 let winText = `Congratulations! You have reached the end and beaten this game, but for now...`
