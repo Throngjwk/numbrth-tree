@@ -1,5 +1,5 @@
 let modInfo = {
-	name: "Jeehan's Tree",
+	name: "Jeehan's Trees",
 	id: "JHJHT",
 	author: "Jeehan2561",
 	pointsName: "points",
@@ -68,7 +68,7 @@ function addedPlayerData() { return {
 // Display extra things at the top of the page
 var displayThings = [
 	function(){
-		return "You are in The Numbruh Tree"
+		return "This is The Numbruh Tree"
 	}
 ]
 
