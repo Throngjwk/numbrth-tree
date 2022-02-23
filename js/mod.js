@@ -13,13 +13,13 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0",
+	num: "0.1",
 	name: "Numbruh Tree?",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
     <h2>Warning: This mod may be unbalanced</h2><br>
-	<h3>v0</h3><br>
+	<h3>v0.1</h3><br>
 	    - Added The Numbruh Tree<br>
 		- Added 3 Layers.<br>
 		- Added 12 Achievements.<br>

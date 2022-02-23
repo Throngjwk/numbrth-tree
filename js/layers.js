@@ -97,7 +97,7 @@ addLayer("ach", {
             onComplete() {player[this.layer].points = player[this.layer].points.add(1)}
         },
         32: {
-            name: "Endgame of V0",
+            name: "Endgame of V0.1",
             unlocked() {return player.one.points.gte("1")},
             done() {return new Decimal (player.one.points).gte("3")},
             goalTooltip: "Gain 3 ones.",
