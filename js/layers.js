@@ -90,7 +90,7 @@ addLayer("ach", {
         },
         31: {
             name: "Finally a new Layer!",
-            unlocked() {return player.one.points.gte("1")},
+            unlocked() {return player.one.total.gte("1")},
             done() {return new Decimal (player.one.points).gte("1")},
             goalTooltip: "Gain 1 one.",
             doneTooltip: "Gain 1 one. (Completed)",
@@ -98,10 +98,10 @@ addLayer("ach", {
         },
         32: {
             name: "Endgame of V0.1",
-            unlocked() {return player.one.points.gte("1")},
-            done() {return new Decimal (player.one.points).gte("3")},
-            goalTooltip: "Gain 3 ones.",
-            doneTooltip: "Gain 3 ones. (Completed)",
+            unlocked() {return player.one.total.gte("1")},
+            done() {return new Decimal (player.one.total).gte("3")},
+            goalTooltip: "Gain 3 total ones.",
+            doneTooltip: "Gain 3 total ones. (Completed)",
             onComplete() {player[this.layer].points = player[this.layer].points.add(1)}
         },
     }
