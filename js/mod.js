@@ -1,6 +1,6 @@
 let modInfo = {
-	name: "Jeehan's Trees",
-	id: "JHJHT",
+	name: "The Numbruh Tree",
+	id: "JHTNT",
 	author: "Jeehan2561",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
@@ -13,14 +13,13 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: "0.1",
-	name: "Numbruh Tree?",
+	num: ".1",
+	name: "Start",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
     <h2>Warning: This mod may be unbalanced</h2><br>
-	<h3>v0.1</h3><br>
-	    - Added The Numbruh Tree<br>
+	<h3>v.1 - Start</h3><br>
 		- Added 3 Layers.<br>
 		- Added 12 Achievements.<br>
 		- Added 1 Buyable.<br>
@@ -67,9 +66,9 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	function(){
-		return "You are in The Numbruh Tree"
-	}
+	() => `<br>If you found a bug Please contact Jeehan2561#6268`,
+	"<br>",
+	() => player.keepGoing ? `You're past endgame. The Game may not balanced after this` : ""
 ]
 
 // Determines when the game "ends"
