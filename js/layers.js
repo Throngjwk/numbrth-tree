@@ -311,7 +311,7 @@ addLayer("ach", {
         61: {
             name: "POWERRR",
             unlocked() {return (player.one.total.gte("1e10") && hasAchievement(this.layer, 43)) || hasAchievement(this.layer, this.id)},
-            done() {return new Decimal (player.one.genpow).gte(1)},
+            done() {return new Decimal (player.one.genpow).gte(1e10)},
             goalTooltip: "Generate 1e10 GP<sub>1</sub>.",
             doneTooltip: "Generate 1e10 GP<sub>1</sub>. (Completed)",
             onComplete() {player[this.layer].points = player[this.layer].points.add(1)}
