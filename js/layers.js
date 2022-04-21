@@ -77,7 +77,7 @@ addLayer("vo", {
     position: 1,
     name:"Volatility",
     tooltip: "Volatility",
-    layerShown() {return (hasUpgrade('one', 33) || hasAchievement('ach', 71)) || !(player.vo.upgrades.length < 0)},
+    layerShown() {return (hasUpgrade('one', 33) || hasAchievement('ach', 71)) || (player.vo.upgrades.length >= 1)},
     tabFormat: [["display-text",
     function() { return '<h2>Volatility Upgrades</h2>' }], "blank", "upgrades", ["display-text", () => "Non-Volatiling a layer will keep their content except resources and will passively gain their prestige reward."],],
     upgrades: {
