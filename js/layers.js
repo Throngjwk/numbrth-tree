@@ -441,6 +441,14 @@ addLayer("zero", {
         layerDataReset(this.layer, keep)
         
         },
+    hotkeys: [
+            {
+                key: "0", // What the hotkey button is. Use uppercase if it's combined with shift, or "ctrl+x" for holding down ctrl.
+                description: "0: reset your points for zeros", // The description of the hotkey that is displayed in the game's How To Play tab
+                onPress() { if (player.zero.unlocked) doReset("zero") },
+                unlocked() {return true} // Determines if you can use the hotkey, optional
+            }
+        ],
     tabFormat: {
         "Upgrades": {
             unlocked(){return true},
@@ -465,6 +473,7 @@ addLayer("zero", {
                 "resource-display",
                 "blank",
                 "blank",
+                "clickables",
                 "buyables"
             ]
         },
@@ -970,6 +979,14 @@ addLayer("one", {
         let eff = Decimal.pow(base, expo)
         return eff
     },
+    hotkeys: [
+        {
+            key: "1", // What the hotkey button is. Use uppercase if it's combined with shift, or "ctrl+x" for holding down ctrl.
+            description: "1: reset your zeros for ones", // The description of the hotkey that is displayed in the game's How To Play tab
+            onPress() { if (player.one.unlocked) doReset("one") },
+            unlocked() {return hasAchievement('ach', 21)} // Determines if you can use the hotkey, optional
+        }
+    ],
     tabFormat:{
         "Milestones": {
             unlocked(){return true},
@@ -1507,6 +1524,14 @@ addLayer('two', {
         let eff = Decimal.pow(base, expo)
         return eff
     },
+    hotkeys: [
+        {
+            key: "2", // What the hotkey button is. Use uppercase if it's combined with shift, or "ctrl+x" for holding down ctrl.
+            description: "2: reset your ones for twos", // The description of the hotkey that is displayed in the game's How To Play tab
+            onPress() { if (player.two.unlocked) doReset("two") },
+            unlocked() {return hasAchievement('ach', 71)} // Determines if you can use the hotkey, optional
+        }
+    ],
     tabFormat: {
         "Milestones": {
             unlocked(){return true},
