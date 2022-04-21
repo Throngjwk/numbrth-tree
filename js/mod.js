@@ -1,25 +1,35 @@
 let modInfo = {
 	name: "The Numbruh Tree",
 	id: "JHTNT",
-	author: "Jeehan2561",
+	author: "JeehanMoment",
 	pointsName: "points",
 	modFiles: ["layers.js", "tree.js"],
 
-	discordName: "",
-	discordLink: "",
+	discordName: "JeehanMoment's Modded stuffs",
+	discordLink: "https://discord.gg/4mPMTVJGf3",
 	initialStartPoints: new Decimal (0), // Used for hard resets and new players
 	offlineLimit: 1,  // In hours
 }
 
 // Set your version in num and name
 let VERSION = {
-	num: ".1",
-	name: "Start",
+	num: ".1.1",
+	name: "Automatic",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
     <h2>Warning: This mod may be unbalanced</h2><br>
-	<h3>v.1 - Start</h3><br>
+	<h3>V.1.1 - Automatic, Generators, Volatility and a new layer</h3><br>
+		- Added 4 new Layers.<br>
+		- Added 20 new Acievements.<br>
+		- Added 3 Automators.<br>
+		- Added 1 new Buyables.<br>
+		- Added 5 Generators.<br>
+		- Added 1 Accelerator.<br>
+		- Added 20 new Upgrades.<br>
+		- Added 1 new Volatility Upgrades.<br>
+		Endgame: 10 total twos<br>
+	<h3>V.1 - Start</h3><br>
 		- Added 3 Layers.<br>
 		- Added 12 Achievements.<br>
 		- Added 1 Buyable.<br>
@@ -57,6 +67,9 @@ function getPointGen() {
 	gain = gain.times(buyableEffect('zero', 11))
 	if(hasUpgrade('one', 11)) gain = gain.times(upgradeEffect('one', 11))
 	if(hasUpgrade('one', 12)) gain = gain.times(upgradeEffect('one', 12))
+	if(hasUpgrade('one', 15)) gain = gain.times(upgradeEffect('one', 15).p)
+	if(hasUpgrade('two', 11)) gain = gain.times(upgradeEffect('two', 11))
+	if (hasAchievement('ach', 31)) gain=gain.times(Decimal.div(180, 100))
 	return gain
 }
 
@@ -66,14 +79,14 @@ function addedPlayerData() { return {
 
 // Display extra things at the top of the page
 var displayThings = [
-	() => `<br>If you found a bug Please contact Jeehan2561#6268`,
+	() => `<br>If you found a bug Please contact JeehanMoment#6268 on Discord.`,
 	"<br>",
-	() => player.keepGoing ? `You're past endgame. The Game may not balanced after this` : ""
+	() => player.keepGoing ? `You're past endgame. The Game may not balanced after this.` : ""
 ]
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.one.total.gte(new Decimal("3"))
+	return player.two.total.gte(new Decimal("10"))
 }
 
 
