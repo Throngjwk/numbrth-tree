@@ -1271,6 +1271,7 @@ addLayer("one", {
                 let Mult = Decimal.pow(multbase, expo)
                 if (hasUpgrade('one', 22)) Mult = Mult.times(upgradeEffect('one', 22))
                 if (hasUpgrade('two', 13)) Mult = Mult.times(upgradeEffect('two', 13))
+                if (hasUpgrade('two', 14)) Mult = Mult.times(upgradeEffect('two', 14))
                 let Generate = base.mul(Mult)
                 Generate = Generate.mul(buyableEffect(this.layer, 31).Eff)
                 return {
@@ -1613,8 +1614,8 @@ addLayer('two', {
             }
         },
         14: {
-            title: "Quadruple Points",
-            description: "Quadruple your points gain",
+            title: "Quadruple Powered Points",
+            description: "Quadruple your GP<sub>1</sub> and points gain",
             cost: new Decimal (5),
             unlocked() {
                 return (hasUpgrade('two', 13))
