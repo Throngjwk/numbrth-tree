@@ -360,8 +360,8 @@ addLayer("ach", {
             name: "Endgame of V.1.1",
             unlocked() {return (player.two.total.gte("1") && hasAchievement(this.layer, 71)) || hasAchievement(this.layer, this.id)},
             done() {return player.two.total.gte("10")},
-            goalTooltip: "Gain 10 total two.",
-            doneTooltip: "Gain 10 total two. (Completed)",
+            goalTooltip: "Gain 10 total twos.",
+            doneTooltip: "Gain 10 total twos. (Completed)",
             onComplete() {player[this.layer].points = player[this.layer].points.add(1)}
         },
     }
@@ -397,7 +397,7 @@ addLayer("sa", {
         22: {
             name: "Idling is useless anyways.",
             unlocked() {return hasAchievement(this.layer, this.id)},
-            done() {return (!(hasUpgrade('zero', 13) || hasUpgrade('zero', 14)  || hasUpgrade('zero', 22)) && (player.zero.points.gte(1e10) && player.one.best.gte(1)))},
+            done() {return (!(hasUpgrade('zero', 13)) && !(hasUpgrade('zero', 14)) && !(hasUpgrade('zero', 22)) && (player.zero.points.gte(1e10) && player.one.best.gte(1)))},
             goalTooltip: "???",
             doneTooltip: "Be able to do a ones reset without "+'"Pointed Generation", "Reversed Boost", "Time Boost"'+" Upgrades. (Completed)",
             onComplete() {player[this.layer].points = player[this.layer].points.add(1)}
@@ -447,7 +447,7 @@ addLayer("zero", {
                 description: "0: reset your points for zeros", // The description of the hotkey that is displayed in the game's How To Play tab
                 onPress() { if (player.zero.unlocked) doReset("zero") },
                 unlocked() {return true} // Determines if you can use the hotkey, optional
-            }
+            },
         ],
     tabFormat: {
         "Upgrades": {
@@ -1614,10 +1614,10 @@ addLayer('two', {
         },
         14: {
             title: "Quadruple Points",
-            description: "<b>A Boost</b> also boost GP<sub>1</sub> gain at a reduced rate.",
+            description: "Quadruple your points gain",
             cost: new Decimal (5),
             unlocked() {
-                return (hasUpgrade('two', 12))
+                return (hasUpgrade('two', 13))
             },
             effect() {
                 let base = new Decimal (4)
