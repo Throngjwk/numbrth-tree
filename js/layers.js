@@ -950,8 +950,8 @@ addLayer("one", {
     exponent: 1/(new Decimal(1e10).log(10)), // 1/10
     gainMult() {
         let mult = new Decimal (1)
-        if (hasUpgrade('one', 25)) mult = mult.mul(upgradeEffect('one', 25))
-        if (hasMilestone('two', 0)) mult = mult.y=(tmp.two.GetBoostIIEff)
+        if (hasUpgrade('one', 25)) mult = mult.times(upgradeEffect('one', 25))
+        if (hasMilestone('two', 0)) mult = mult.times(tmp.two.GetBoostIIEff)
         return mult
     },
     gainExp() {
