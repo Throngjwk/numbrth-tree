@@ -2463,16 +2463,16 @@ addLayer('two', {
             unlocked() {return hasMilestone(this.layer, 2)},
             done() { return player.two.total.gte(1e3) },
         },
-        4: {
-            requirementDescription: "1e10 total bricks (Auto IV)",
-            effectDescription: function() {return "Unlock an Autobuyer for one upgrades."},
-            unlocked() {return hasMilestone(this.layer, 3)},
-            done() { return player.two.bombsandbricks.total.gte(1) },
-        },
         5: {
             requirementDescription: "10,000 total twos (Boost IV)",
             effectDescription: function() {return "<b>Better Bomb</b>'s second effect is raised by 0.9 for each completed two milestones. Currently: ^"+format(tmp.two.GetBoostIVEff)},
             unlocked() {return hasMilestone(this.layer, 4)},
+            done() { return player.two.bombsandbricks.total.gte(1) },
+        },
+        4: {
+            requirementDescription: "1e10 total bricks (Auto IV)",
+            effectDescription: function() {return "Unlock an Autobuyer for one upgrades."},
+            unlocked() {return hasMilestone(this.layer, 3)},
             done() { return player.two.bombsandbricks.total.gte(1) },
         },
     },
