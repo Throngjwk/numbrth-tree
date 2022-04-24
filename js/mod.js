@@ -13,13 +13,13 @@ let modInfo = {
 
 // Set your version in num and name
 let VERSION = {
-	num: ".1.1",
-	name: "Automatic",
+	num: ".1.2.1",
+	name: "B&B",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
     <h2>Warning: This mod may be unbalanced</h2><br>
-	<h3>V.1.2.1 - Bombs and Bricks Part 1h3><br>
+	<h3>V.1.2.1 - Bombs and Bricks Part 1<h3><br>
 		- Added 14 new Acievements.<br>
 		- Added 1 Automators.<br>
 		- Added 3 new Buyables.<br>
