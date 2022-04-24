@@ -19,6 +19,13 @@ let VERSION = {
 
 let changelog = `<h1>Changelog:</h1><br>
     <h2>Warning: This mod may be unbalanced</h2><br>
+	<h3>V.1.2.1 - Bombs and Bricks Part 1h3><br>
+		- Added 14 new Acievements.<br>
+		- Added 1 Automators.<br>
+		- Added 3 new Buyables.<br>
+		- Added 5 new Generators.<br>
+		- Added 6 new Upgrades.<br>
+		Endgame: 1e5 total twos<br>
 	<h3>V.1.1 - Automatic, Generators, Volatility and a new layer</h3><br>
 		- Added 4 new Layers.<br>
 		- Added 20 new Acievements.<br>
@@ -70,6 +77,7 @@ function getPointGen() {
 	if(hasUpgrade('one', 15)) gain = gain.times(upgradeEffect('one', 15).p)
 	if(hasUpgrade('two', 11)) gain = gain.times(upgradeEffect('two', 11))
 	if(hasUpgrade('two', 14)) gain = gain.times(upgradeEffect('two', 14))
+	if(hasUpgrade('two', 15)) gain = gain.times(upgradeEffect('two', 15).P)
 	if (hasAchievement('ach', 31)) gain=gain.times(Decimal.div(180, 100))
 	return gain
 }
@@ -87,7 +95,7 @@ var displayThings = [
 
 // Determines when the game "ends"
 function isEndgame() {
-	return player.two.total.gte(new Decimal("10"))
+	return player.two.total.gte(new Decimal("1e5"))
 }
 
 
