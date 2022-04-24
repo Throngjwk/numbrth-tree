@@ -1148,6 +1148,15 @@ addLayer("one", {
             buyUpgrade(this.layer, 33)
         }
     },
+    doReset(layer) {
+
+        if (!(layers[layer].row > this.row)) return
+        
+        let keep = ["autoupgrades"]
+        
+        layerDataReset(this.layer, keep)
+        
+        },
     hotkeys: [
         {
             key: "1", // What the hotkey button is. Use uppercase if it's combined with shift, or "ctrl+x" for holding down ctrl.
@@ -2129,7 +2138,7 @@ addLayer('two', {
             title: "Backpack",
             display(){
                 let text = format(player.two.bombsandbricks.bricksinbp).toString() + "/" + format(player.two.bombsandbricks.bpcap).toString() + " Bricks"
-                if (player.two.bombsandbricks.bricksinbp.eq(player.two.bombsandbricks.bpcap)) text = text + "<br>Fulled"
+                if (player.two.bombsandbricks.bricksinbp.eq(player.two.bombsandbricks.bpcap)) text = text + "<br>Full"
                 return text
             },
             unlocked() {return true},
